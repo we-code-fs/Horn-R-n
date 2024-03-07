@@ -129,7 +129,7 @@ class UnitedFooter extends HTMLElement {
 // *****************
 // !Review Code
 document.addEventListener("DOMContentLoaded", function() {
-  const links = document.querySelectorAll(".nav-item");
+  const links = document.querySelectorAll(".nav-link");
   const currentLocation = location.pathname;
 
   links.forEach(function(link) {

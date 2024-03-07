@@ -95,13 +95,7 @@ class UnitedFooter extends HTMLElement {
                 <li class="footer-contact-list-item"><a href="https://maps.app.goo.gl/HoqzpefTNBsZACoo7" class="footer-nav-link">
                   15 Rue Combe Jean Robert, <br/>21400 Châtillon-sur-Seine</a></li>
                 <li class="footer-contact-list-item"><span class="me-3"><a href="tel:+330380817683" class="footer-nav-link">03 80 81 76 83</a></span><span><a href="tel:+330699357256" class="footer-nav-link">06 99 35 72 56</a></span></li>
-                <!-- !Remove after testing number below -->
-                <li><a href="tel:+3306149427" class="footer-nav-link">Call Jad Bou Raad - 06 76 14 94 27</a></li>
-                <!-- !Remove after testing number above -->
                 <li class="footer-contact-list-item"><a href="mailto:hornrenovation21400@gmail.com" target="_blank" class="footer-nav-link">hornrenovation21400@gmail.com</a></li>
-                <!-- !Remove after testing link below -->
-                <li class="footer-contact-list-item"><a href="mailto:jad.bou.raadd@gmail.com" class="footer-nav-link">jad.bou.raadd@gmail.com</a></li>
-                <!-- !Remove top li after testing -->
                 <li class="fw-bold text-uppercase contact-list-item"><a href="https://www.facebook.com/profile.php?id=61550916426241" target="_blank" class="footer-nav-link">Suivez-nous</a></li>
               </ul>
               </div>

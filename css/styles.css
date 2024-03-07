@@ -50,8 +50,7 @@ h6 {
 }
 
 .bg-gray {
-  padding-top: 10rem;
-  padding-bottom: 10rem;
+  padding: 10rem 0;
   background-color: var(--color-bg-light-grey);
 }
 
@@ -124,11 +123,22 @@ h6 {
   padding: 3.5rem;
 }
 .header-btn {
+  display: inline-block;
   margin-top: 20px;
   color: var(--color-white);
   font-weight: bold;
   border-radius: 0;
   background-color: var(--color-medium-green);
+  transition: all 0.3s ease-in-out;
+}
+.header-btn-arrow {
+  display: none;
+}
+.header-btn:hover {
+  background-color: var(--color-medium-green);
+}
+.header-btn:hover .header-btn-arrow {
+  display: inline-block !important;
 }
 
 .footer {
@@ -156,6 +166,67 @@ h6 {
   text-align: end;
   position: absolute;
   bottom: 0;
+}
+
+@keyframes loading {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 100%;
+  }
+}
+.découvrez-container {
+  position: relative;
+}
+.découvrez-card .card {
+  border-radius: 0;
+  border: none;
+  background-color: var(--color-bg-light-grey);
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  display: none;
+}
+.découvrez-card-heading {
+  color: var(--color-medium-green);
+  font-weight: bold;
+}
+.découvrez-card-btn-container {
+  position: relative;
+}
+.découvrez-card-loading-bar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background-color: var(--color-medium-green);
+  z-index: 1;
+  animation: loading 1s ease-in-out;
+  display: none;
+}
+.découvrez-card-arrow {
+  display: none;
+  margin-left: 10px;
+}
+.découvrez-card-btn:link, .découvrez-card-btn:visited {
+  border: 3px solid var(--color-medium-green);
+  border-radius: 0;
+  font-weight: bold;
+  color: var(--color-medium-green);
+  width: 100%;
+  background-color: transparent;
+  overflow: hidden;
+  position: relative;
+  z-index: 5;
+  display: inline-block;
+  transition: color 0.3s;
+}
+.découvrez-card-btn:hover .découvrez-card-arrow, .découvrez-card-btn:hover .découvrez-card-loading-bar {
+  display: inline-block;
 }
 
 .carousel {

@@ -128,11 +128,22 @@ class UnitedFooter extends HTMLElement {
 // Active Nav Page
 // *****************
 // !Review Code
-const navbarSelectedPage = window.location.pathname;
-const navLinks = document.querySelectorAll(`.nav-item`).forEach((link) => {
-  if (link.href.includes(`${navbarSelectedPage}`)) {
-    link.classList.add(`nav-item-selected`);
-  }
+document.addEventListener("DOMContentLoaded", function() {
+  const links = document.querySelectorAll(".nav-item");
+  const currentLocation = location.pathname;
+
+  links.forEach(function(link) {
+    if (link.getAttribute("href") === currentLocation) {
+      link.classList.add("nav-item-selected");
+    }
+  });
+});
+
+// const navbarSelectedPage = window.location.pathname;
+// const navLinks = document.querySelectorAll(`.nav-item`).forEach((link) => {
+//   if (link.href.includes(`${navbarSelectedPage}`)) {
+//     link.classList.add(`nav-item-selected`);
+//   }
 });
 
 // ****************

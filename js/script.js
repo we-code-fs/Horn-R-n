@@ -132,7 +132,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const currentLocationNormalized = currentLocation.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
 
     if (linkHref === currentLocationNormalized) {
-      link.classList.add("active");
+      link.classList.add("nav-item-selected");
     }
   });
 });

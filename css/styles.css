@@ -68,9 +68,9 @@ h6 {
 }
 
 .section-img {
-  height: 100%;
-  width: 100%;
-  object-fit: cover;
+  height: 100% !important;
+  width: 100% !important;
+  object-fit: cover !important;
 }
 
 .nav-logo {
@@ -84,7 +84,7 @@ h6 {
   transition: all 0.3s;
 }
 .nav-item:hover, .nav-item-selected {
-  background-color: var(--color-bg-light-grey);
+  background-color: var(--color-bg-light-grey) !important;
 }
 .nav-item:hover a, .nav-item-selected a {
   color: var(--color-medium-green) !important;
@@ -178,9 +178,9 @@ h6 {
 }
 .découvrez-container {
   position: relative;
+  overflow: hidden;
 }
-.découvrez-card .card {
-  border-radius: 0;
+.découvrez-content-card {
   border: none;
   background-color: var(--color-bg-light-grey);
   position: absolute;
@@ -190,14 +190,14 @@ h6 {
   width: 100%;
   display: none;
 }
-.découvrez-card-heading {
+.découvrez-content-card-heading {
   color: var(--color-medium-green);
   font-weight: bold;
 }
-.découvrez-card-btn-container {
+.découvrez-content-card-btn-container {
   position: relative;
 }
-.découvrez-card-loading-bar {
+.découvrez-content-card-loading-bar {
   position: absolute;
   top: 0;
   left: 0;
@@ -208,11 +208,11 @@ h6 {
   animation: loading 1s ease-in-out;
   display: none;
 }
-.découvrez-card-arrow {
+.découvrez-content-card-arrow {
   display: none;
   margin-left: 10px;
 }
-.découvrez-card-btn:link, .découvrez-card-btn:visited {
+.découvrez-content-card-btn:link, .découvrez-content-card-btn:visited {
   border: 3px solid var(--color-medium-green);
   border-radius: 0;
   font-weight: bold;
@@ -225,7 +225,7 @@ h6 {
   display: inline-block;
   transition: color 0.3s;
 }
-.découvrez-card-btn:hover .découvrez-card-arrow, .découvrez-card-btn:hover .découvrez-card-loading-bar {
+.découvrez-content-card-btn:hover .découvrez-content-card-arrow, .découvrez-content-card-btn:hover .découvrez-content-card-loading-bar {
   display: inline-block;
 }
 
@@ -316,13 +316,16 @@ h6 {
 }
 .actualité-links {
   margin: 5rem auto 10rem;
-  border: 1px solid orange;
 }
 .actualité-card {
   min-height: 430px;
-  border-radius: 0;
+  padding: 1rem;
   border: none;
+  border-radius: 0;
   background-color: var(--color-bg-light-grey);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 .actualité-card-link:link, .actualité-card-link:visited {
   text-decoration: none;
@@ -335,31 +338,29 @@ h6 {
 }
 .actualité-card-img-container {
   overflow: hidden;
-  padding: 1rem 1rem 0 1rem;
 }
 .actualité-card-img:hover {
   transform: scale(1.05);
 }
 .actualité-card-content {
-  padding: 0;
   height: 100%;
-  border: 1px solid purple;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 .actualité-card-title {
   color: var(--color-dark-green);
   font-weight: bold;
-  margin-bottom: 1rem;
-  border: 1px solid red;
 }
 .actualité-card-text {
   color: var(--color-text-light-grey-1);
-  border: 1px solid green;
+  flex-grow: 1;
 }
 .actualité-card-date {
   font-size: 14px;
   font-weight: light;
-  margin-bottom: 0;
-  border: 1px solid blue;
+  color: var(--color-text-light-grey-1);
 }
 .actualité-page-article {
   margin: -5rem auto 5rem auto;
@@ -371,6 +372,14 @@ h6 {
   width: 95%;
   margin: auto;
   color: var(--color-dark-green);
+}
+
+#page_actualité_1 aside {
+  margin-bottom: -50px;
+}
+#page_actualité_1 .actualité-card {
+  margin-top: 5rem;
+  background-color: var(--color-white);
 }
 
 @keyframes slide {

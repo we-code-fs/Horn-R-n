@@ -18,7 +18,7 @@
     <link rel="stylesheet" href="./css/styles.css" />
     <title>Horn Rénovation</title>
   </head>
-  <!-- !Remove borders from sections after design completion -->
+
   <body id="page_principale">
     <!-- Navigation -->
     <nav>
@@ -27,13 +27,13 @@
     </nav>
 
     <!-- Header -->
-    <header>
+    <header class="overflow-hidden">
       <div class="header slanted-bottom container-fluid px-0">
         <div class="row g-0 w-100">
           <!-- Header text section -->
           <div class="col-lg-6 d-flex align-items-center">
-            <div class="header-text-container">
-              <h1>Votre entreprise de rénovation à Châtillon-sur-Seine</h1>
+            <div class="header-text-container w-100">
+              <h1 class="header-heading">Votre entreprise de rénovation à Châtillon-sur-Seine</h1>
               <p>
                 Horn Rénovation, dirigée par John Horn, est votre entreprise de travaux et de modernisation située à Châtillon-sur-Seine en Côte-d’Or. Nous proposons aux particuliers et aux professionnels des prestations de qualité en matière de rénovation, de ravalement de façade, de maçonnerie générale et de travaux de couverture.
               </p>
@@ -44,9 +44,9 @@
           <div class="col-lg-6">
             <div class="header-img-container">
               <img
-                src="./images/home/home-header.jpg"
+                src="./images/home/Home-Header-Img-min.jpg"
                 alt=""
-                class="section-img"
+                class="section-img d-none d-lg-block"
               />
             </div>
           </div>
@@ -55,9 +55,9 @@
     </header>
 
     <!-- Main content -->
-    <main id="page_principale">
+    <main>
       <!-- Découvrez section with cards links -->
-      <section class="découvrez my-5">
+      <section class="découvrez my-5 overflow-hidden">
         <div class="container">
           <div class="row">
             <div class="col-md-6 offset-md-3 mb-4">
@@ -69,83 +69,130 @@
           </div>
 
           <!-- Cards container -->
+          <!-- !Finish cards section -->
           <!-- TODO Add alt text to images -->
           <div class="row">
-            <!-- Card to page Ravalement -->
             <div class="col-md-4">
-              <div class="découvrez-container">
-                <img src="./images/home/Home-card-ravalement-min.jpg" alt="" class="section-img d-none d-md-block">
-                <!-- Card Hover -->
-                <div class="découvrez-card d-none d-sm-block">
-                  <div class="card">
-                    <div class="card-body">
-                      <!-- Card hover Image -->
-                      <div class="découvrez-card-header-container">
-                        <img src="./images/home/sm-ravalement-icon.svg" alt="Ravalement Icone">
-                        <p class="découvrez-card-heading">Ravalement de façade</p>
-                      </div>
-                      <!-- Card hover text -->
-                      <div class="découvrez-card-text-container">
-                          <p>Les murs extérieurs de votre bâtiment sont sales et vous semblent ternes ? Horn Rénovation intervient à Châtillon-sur-Seine et ses environs pour prendre en charge des travaux de qualité en matière de ravalement de façade.</p>
-                      </div>
-                      <!-- Card hover btn -->
-                      <div class="découvrez-card-btn-container">
-                        <a href="ravalement_de_façade.html" class="btn découvrez-card-btn">Ravalement de façade<i class="fa fa-arrow-right découvrez-card-arrow"></i>
-                        </a>
-                        <span class="découvrez-card-loading-bar"></span>
-                      </div>
+              <div class="card-img">
+                <img src="./images/home/" alt="">
+              </div>
+            </div>
+          </div>
+
+          <!-- Cards Small Screens -->
+          <div class="row g-3 d-none d-sm-block d-md-none">
+            <!-- Ravalement Card -->
+            <div class="col-md-4">
+              <div class="card rounded-0 bg-light border-0">
+                <div class="card-body">
+                  <div
+                    class="h-100 d-flex flex-column justify-content-around gap-2"
+                  >
+                    <div>
+                      <img
+                        src="./images/home/sm-ravalement-icon.svg"
+                        alt=""
+                        class="d-block"
+                      />
+                      <p class="text-primary fw-bold card-title">
+                        Ravalement de façade
+                      </p>
+                    </div>
+                    <div>
+                      <p class="card-text">
+                        Les murs extérieurs de votre bâtiment sont sales et vous
+                        semblent ternes ? Horn Rénovation intervient à
+                        Châtillon-sur-Seine et ses environs pour prendre en
+                        charge des travaux de qualité en matière de ravalement
+                        de façade.
+                      </p>
+                    </div>
+                    <div>
+                      <a
+                        href="ravalement-façade.html"
+                        class="btn btn-outline-primary d-grid fw-bold rounded-0 border-3"
+                        >Ravalement de façade</a
+                      >
                     </div>
                   </div>
                 </div>
-              </div>    
+              </div>
             </div>
-
-            <!-- Card to page Toiture -->
+            <!-- Toiture Card -->
             <div class="col-md-4">
-              <div class="découvrez-img">
-                <img src="./images/home/Home-card-toiture-min.jpg" alt="" class="section-img d-none d-md-block">
-              </div>
-              <div class="découvrez-card"></div>
-            </div>
-
-            
-              <!-- Card to page Rénovation -->
-              <div class="col-md-4">
-                <div class="découvrez-img">
-                  <img src="./images/home/Home-card-rénovation-min.jpg" alt="" class="section-img d-none d-md-block">
-                </div>
-                <div class="découvrez-card">
-                  
-                </div>
-              </div>
-            </div>
-
-            <div class="row">
-              <div class="col-md-4"><div class="découvrez-sm-card">
-                <div class="card">
-                  <div class="card-body">
-                    <div class="découvrez-card-header-container">
-                      <img src="./images/home/sm-ravalement-icon.svg" alt="Ravalement Icone">
-                      <p class="découvrez-card-heading">Ravalement de façade</p>
+              <div class="card rounded-0 bg-light border-0 h-100">
+                <div class="card-body">
+                  <div class="d-flex flex-column justify-content-around gap-2">
+                    <div>
+                      <img
+                        src="./images/home/sm-toiture-icon.svg"
+                        alt=""
+                        class="d-block"
+                      />
+                      <p class="text-primary fw-bold card-title">
+                        Entretien Toiture
+                      </p>
                     </div>
-                    <div class="découvrez-card-text-container">
-                      <p>Les murs extérieurs de votre bâtiment sont sales et vous semblent ternes ? Horn Rénovation intervient à Châtillon-sur-Seine et ses environs pour prendre en charge des travaux de qualité en matière de ravalement de façade.</p>
+                    <div>
+                      <p class="card-text">
+                        Experte en travaux de toiture, l’entreprise Horn
+                        Rénovation est à votre service pour assurer des travaux
+                        de couverture, de peinture, de gouttières et traitement
+                        de toiture et d’isolation des combles.
+                      </p>
                     </div>
-                    <div class="découvrez-card-btn-container">
-                      <a href="ravalement_de_façade.html" class="btn découvrez-card-btn">Ravalement de façade<i class="fa fa-arrow-right découvrez-card-arrow"></i></a>
-                      <span class="découvrez-card-loading-bar"></span>
+                    <div>
+                      <a
+                        href="entretien-toiture.html"
+                        class="btn btn-outline-primary d-grid fw-bold rounded-0 border-3"
+                        >Entretien toiture</a
+                      >
                     </div>
                   </div>
                 </div>
-              </div></div>
-              
+              </div>
             </div>
+            <!-- Renovatioon Card -->
+            <div class="col-md-4">
+              <div class="card rounded-0 bg-light border-0 h-100">
+                <div class="card-body">
+                  <div class="d-flex flex-column justify-content-around gap-2">
+                    <div>
+                      <img
+                        src="./images/home/sm-rénovation-icon.svg"
+                        alt=""
+                        class="d-block"
+                      />
+                      <p class="text-primary fw-bold card-title">
+                        Rénovation intérieure
+                      </p>
+                    </div>
+                    <div>
+                      <p class="card-text">
+                        Afin de transformer vos espaces intérieures de manière
+                        rapide et efficace, l’entreprise de rénovation Horn
+                        Rénovation est à votre service pour réaliser tous vos
+                        travaux de peinture intérieure.
+                      </p>
+                    </div>
+                    <div>
+                      <a
+                        href="rénovation.html"
+                        class="btn btn-outline-primary d-grid fw-bold rounded-0 border-3"
+                        >Rénovation intérieure</a
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
           </div>
         </div>
       </section>
 
       <!-- Continuous images moving -->
-      <section class="images-scroll slanted-bottom-top bg-gray">
+      <section class="images-scroll slanted-bottom-top bg-gray overflow-hidden">
         <div class="container-fluid">
           <div class="row">
             <div class="col-12">
@@ -168,6 +215,14 @@
                 <img src="./images/home/scroll-6.jpg" alt="" />
                 <img src="./images/home/scroll-7.jpg" alt="" />
                 <img src="./images/home/scroll-8.jpg" alt="" />
+                <img src="./images/home/scroll-1.jpg" alt="" />
+                <img src="./images/home/scroll-2.jpg" alt="" />
+                <img src="./images/home/scroll-3.jpg" alt="" />
+                <img src="./images/home/scroll-4.jpg" alt="" />
+                <img src="./images/home/scroll-5.jpg" alt="" />
+                <img src="./images/home/scroll-6.jpg" alt="" />
+                <img src="./images/home/scroll-7.jpg" alt="" />
+                <img src="./images/home/scroll-8.jpg" alt="" />
               </div>
             </div>
             
@@ -177,9 +232,9 @@
       </section>
 
       <!-- Expertise section -->
-      <section class="expertise my-5">
+      <section class="expertise my-5 overflow-hidden">
         <div class="container">
-          <div class="row">
+          <div class="row d-flex justify-content-center align-items-center">
             <!-- !Changer text -->
             <div class="col-lg-6">
               <div class="section-text">

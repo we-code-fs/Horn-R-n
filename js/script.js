@@ -4,7 +4,7 @@ class UnitedNav extends HTMLElement {
   connectedCallback() {
     this.innerHTML = `
     <!-- Change expand screen if needed -->
-      <div class="navbar navbar-expand-xl p-0">
+      <div class="navbar navbar-expand-xl p-0 overflow-hidden">
         <div class="container-fluid p-0">
           <!-- Horn Rénovation Logo -->
           <a href="index.html" class="navbar-brand"
@@ -81,8 +81,8 @@ class UnitedNav extends HTMLElement {
 class UnitedFooter extends HTMLElement {
   connectedCallback() {
     this.innerHTML = `
-    <div class="footer slanted-top container-fluid px-0">
-        <div class="container">
+    <div class="footer slanted-top container-fluid px-0 overflow-hidden">
+        <div class="container-fluid p-0">
           <div class="row">
             <div class="col-md-4 text-sm-center">
               <a href="index.html"
@@ -96,7 +96,7 @@ class UnitedFooter extends HTMLElement {
                   15 Rue Combe Jean Robert, <br/>21400 Châtillon-sur-Seine</a></li>
                 <li class="footer-contact-list-item"><span class="me-3"><a href="tel:+330380817683" class="footer-nav-link">03 80 81 76 83</a></span><span><a href="tel:+330699357256" class="footer-nav-link">06 99 35 72 56</a></span></li>
                 <li class="footer-contact-list-item"><a href="mailto:hornrenovation21400@gmail.com" target="_blank" class="footer-nav-link">hornrenovation21400@gmail.com</a></li>
-                <li class="fw-bold text-uppercase contact-list-item"><a href="https://www.facebook.com/profile.php?id=61550916426241" target="_blank" class="footer-nav-link">Suivez-nous</a></li>
+                <li class="fw-bold text-uppercase contact-list-item"><a href="https://www.facebook.com/profile.php?id=61550916426241" target="_blank" class="footer-nav-link">Suivez-nous<i class="fab fa-facebook ms-2"></i></a></li>
               </ul>
               </div>
             <div class="col-md-4">
@@ -121,21 +121,27 @@ class UnitedFooter extends HTMLElement {
 // *****************
 // Active Nav Page
 // *****************
-// !Review Code
 
-document.addEventListener("DOMContentLoaded", function() {
+// !Review Code
+document.addEventListener("DOMContentLoaded", function () {
   const links = document.querySelectorAll(".navbar-nav .nav-link");
   const currentLocation = location.pathname;
 
-  links.forEach(function(link) {
-    const linkHref = link.getAttribute("href").normalize("NFD").replace(/[\u0300-\u036f]/g, "");
-    const currentLocationNormalized = currentLocation.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+  links.forEach(function (link) {
+    const linkHref = link
+      .getAttribute("href")
+      .normalize("NFD")
+      .replace(/[\u0300-\u036f]/g, "");
+    const currentLocationNormalized = currentLocation
+      .normalize("NFD")
+      .replace(/[\u0300-\u036f]/g, "");
 
     if (linkHref === currentLocationNormalized) {
       link.classList.add("nav-item-selected");
     }
   });
 });
+
 // ****************
 // Carousel code
 // *****************

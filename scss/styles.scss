@@ -223,29 +223,40 @@ h6 {
 }
 
 .découvrez {
-  &-container {
+  &-card-img {
     position: relative;
     overflow: hidden;
   }
+  &-hover-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--color-bg-light-grey);
+    padding: 20px;
+    box-sizing: border-box;
+    transform: translateY(100%);
+    transition: transform 0.5s ease-in-out;
+  }
+  &-card-img:hover &-hover-card {
+    transform: translateY(0%);
+  }
+
   &-content-card {
     border: none;
     background-color: var(--color-bg-light-grey);
-
-    position: absolute;
-    top: 0;
-    left: 0;
-
-    height: 100%;
-    width: 100%;
-    display: none;
 
     &-heading {
       color: var(--color-medium-green);
       font-weight: bold;
     }
-    &-btn-container {
-      position: relative;
-    }
+
+    // !Fix loading button
     &-loading-bar {
       position: absolute;
       top: 0;
@@ -283,6 +294,7 @@ h6 {
     }
   }
 }
+
 // Carousel Home Page Styles
 .carousel {
   height: 100%;
@@ -379,8 +391,6 @@ h6 {
     padding: 0.7rem 0;
   }
 }
-
-// !Fix body card height
 
 .actualité {
   &-header {
@@ -484,6 +494,7 @@ h6 {
     background-color: var(--color-white);
   }
 }
+
 // Continuous scroll
 @keyframes slide {
   from {

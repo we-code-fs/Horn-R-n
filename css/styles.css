@@ -176,26 +176,35 @@ h6 {
     width: 100%;
   }
 }
-.découvrez-container {
+.découvrez-card-img {
   position: relative;
   overflow: hidden;
+}
+.découvrez-hover-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--color-bg-light-grey);
+  padding: 20px;
+  box-sizing: border-box;
+  transform: translateY(100%);
+  transition: transform 0.5s ease-in-out;
+}
+.découvrez-card-img:hover .découvrez-hover-card {
+  transform: translateY(0%);
 }
 .découvrez-content-card {
   border: none;
   background-color: var(--color-bg-light-grey);
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  display: none;
 }
 .découvrez-content-card-heading {
   color: var(--color-medium-green);
   font-weight: bold;
-}
-.découvrez-content-card-btn-container {
-  position: relative;
 }
 .découvrez-content-card-loading-bar {
   position: absolute;

@@ -206,21 +206,6 @@ h6 {
   color: var(--color-medium-green);
   font-weight: bold;
 }
-.découvrez-content-card-loading-bar {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 0;
-  height: 100%;
-  background-color: var(--color-medium-green);
-  z-index: 1;
-  animation: loading 1s ease-in-out;
-  display: none;
-}
-.découvrez-content-card-arrow {
-  display: none;
-  margin-left: 10px;
-}
 .découvrez-content-card-btn:link, .découvrez-content-card-btn:visited {
   border: 3px solid var(--color-medium-green);
   border-radius: 0;
@@ -230,12 +215,32 @@ h6 {
   background-color: transparent;
   overflow: hidden;
   position: relative;
-  z-index: 5;
-  display: inline-block;
-  transition: color 0.3s;
+  z-index: 10;
 }
-.découvrez-content-card-btn:hover .découvrez-content-card-arrow, .découvrez-content-card-btn:hover .découvrez-content-card-loading-bar {
+.découvrez-content-card-btn-arrow {
+  display: none;
+}
+.découvrez-content-card-btn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 3px;
+  height: 100%;
+  background-color: var(--color-medium-green);
+  z-index: -5;
+  transform: scaleY(0);
+  transition: transform 0.2s, width 0.4s cubic-bezier(1, 0, 0, 1) 0.2s;
+}
+.découvrez-content-card-btn:hover, .découvrez-content-card-btn:active {
+  color: var(--color-white);
+}
+.découvrez-content-card-btn:hover .découvrez-content-card-btn-arrow, .découvrez-content-card-btn:active .découvrez-content-card-btn-arrow {
   display: inline-block;
+}
+.découvrez-content-card-btn:hover::before {
+  transform: scaleY(1);
+  width: 100%;
 }
 
 .carousel {

@@ -256,23 +256,6 @@ h6 {
       font-weight: bold;
     }
 
-    // !Fix loading button
-    &-loading-bar {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 0;
-      height: 100%;
-      background-color: var(--color-medium-green);
-
-      z-index: 1;
-      animation: loading 1s ease-in-out;
-      display: none;
-    }
-    &-arrow {
-      display: none;
-      margin-left: 10px;
-    }
     &-btn:link,
     &-btn:visited {
       border: 3px solid var(--color-medium-green);
@@ -284,13 +267,34 @@ h6 {
       overflow: hidden;
 
       position: relative;
-      z-index: 5;
-      display: inline-block;
-      transition: color 0.3s;
+      z-index: 10;
     }
-    &-btn:hover &-arrow,
-    &-btn:hover &-loading-bar {
+    &-btn-arrow {
+      display: none;
+    }
+    &-btn::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 3px;
+      height: 100%;
+      background-color: var(--color-medium-green);
+      z-index: -5;
+      transform: scaleY(0);
+      transition: transform 0.2s, width 0.4s cubic-bezier(1, 0, 0, 1) 0.2s;
+    }
+    &-btn:hover,
+    &-btn:active {
+      color: var(--color-white);
+    }
+    &-btn:hover &-btn-arrow,
+    &-btn:active &-btn-arrow {
       display: inline-block;
+    }
+    &-btn:hover::before {
+      transform: scaleY(1);
+      width: 100%;
     }
   }
 }

@@ -282,7 +282,7 @@ h6 {
       background-color: var(--color-medium-green);
       z-index: -5;
       transform: scaleY(0);
-      transition: transform 0.2s, width 0.4s cubic-bezier(1, 0, 0, 1) 0.2s;
+      transition: transform 0.2s, width 0.4s cubic-bezier(1, 0, 0, 1);
     }
     &-btn:hover,
     &-btn:active {

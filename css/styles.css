@@ -26,6 +26,10 @@ h6 {
   color: var(--color-dark-green);
 }
 
+h2 {
+  font-size: 2.4rem;
+}
+
 .border-red {
   border: 1px solid red;
 }
@@ -35,18 +39,18 @@ h6 {
 }
 
 .slanted-bottom {
-  -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 50% 90%, 0 100%);
-  clip-path: polygon(0 0, 100% 0, 100% 100%, 50% 90%, 0 100%);
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 50% 95%, 0 100%);
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 50% 95%, 0 100%);
 }
 
 .slanted-bottom-top {
-  -webkit-clip-path: polygon(0 10%, 50% 0, 100% 10%, 100% 100%, 50% 90%, 0 100%);
-  clip-path: polygon(0 10%, 50% 0, 100% 10%, 100% 100%, 50% 90%, 0 100%);
+  -webkit-clip-path: polygon(0 5%, 50% 0, 100% 5%, 100% 100%, 50% 95%, 0 100%);
+  clip-path: polygon(0 5%, 50% 0, 100% 5%, 100% 100%, 50% 95%, 0 100%);
 }
 
 .slanted-top {
-  -webkit-clip-path: polygon(0 10%, 50% 0, 100% 10%, 100% 100%, 0 100%);
-  clip-path: polygon(0 10%, 50% 0, 100% 10%, 100% 100%, 0 100%);
+  -webkit-clip-path: polygon(0 5%, 50% 0, 100% 5%, 100% 100%, 0 100%);
+  clip-path: polygon(0 5%, 50% 0, 100% 5%, 100% 100%, 0 100%);
 }
 
 .bg-gray {
@@ -115,12 +119,13 @@ h6 {
   color: var(--color-white);
   min-height: 90vh;
 }
-.header h1 {
+.header-heading {
+  font-size: 3rem;
   color: var(--color-white);
   line-height: 1.7;
 }
 .header-text-container {
-  padding: 3.5rem;
+  padding: 3rem 3.5rem;
 }
 .header-btn {
   display: inline-block;
@@ -129,6 +134,7 @@ h6 {
   font-weight: bold;
   border-radius: 0;
   background-color: var(--color-medium-green);
+  margin-bottom: 3rem;
   transition: all 0.3s ease-in-out;
 }
 .header-btn-arrow {
@@ -168,14 +174,6 @@ h6 {
   bottom: 0;
 }
 
-@keyframes loading {
-  0% {
-    width: 0;
-  }
-  100% {
-    width: 100%;
-  }
-}
 .découvrez-card-img {
   position: relative;
   overflow: hidden;
@@ -230,7 +228,7 @@ h6 {
   background-color: var(--color-medium-green);
   z-index: -5;
   transform: scaleY(0);
-  transition: transform 0.2s, width 0.4s cubic-bezier(1, 0, 0, 1) 0.2s;
+  transition: transform 0.2s, width 0.4s cubic-bezier(1, 0, 0, 1);
 }
 .découvrez-content-card-btn:hover, .découvrez-content-card-btn:active {
   color: var(--color-white);
@@ -241,6 +239,29 @@ h6 {
 .découvrez-content-card-btn:hover::before {
   transform: scaleY(1);
   width: 100%;
+}
+
+@keyframes slide {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+.images-scroll-header {
+  text-align: center;
+}
+.images-scroll-text {
+  margin: 3rem auto;
+}
+.images-scroll-container {
+  overflow: hidden;
+}
+.images-scroll-band {
+  display: flex;
+  animation: 15s slide infinite linear;
+  transition: all 0.3sec ease-in-out;
 }
 
 .carousel {
@@ -321,6 +342,7 @@ h6 {
   z-index: -5;
 }
 .actualité-heading {
+  font-size: 3rem;
   margin: 7rem auto;
   text-align: center;
   color: var(--color-white);
@@ -394,28 +416,4 @@ h6 {
 #page_actualité_1 .actualité-card {
   margin-top: 5rem;
   background-color: var(--color-white);
-}
-
-@keyframes slide {
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(-100%);
-  }
-}
-.images-scroll-header {
-  text-align: center;
-}
-.images-scroll-text {
-  width: 50%;
-  margin: 3rem auto;
-}
-.images-scroll-container {
-  overflow: hidden;
-}
-.images-scroll-band {
-  display: flex;
-  animation: 15s slide infinite linear;
-  transition: all 0.3sec ease-in-out;
 }

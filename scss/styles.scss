@@ -27,6 +27,9 @@ h6 {
   font-style: normal;
   color: var(--color-dark-green);
 }
+h2 {
+  font-size: 2.4rem;
+}
 
 // ********Test properties below
 .border-red {
@@ -38,25 +41,18 @@ h6 {
 //  ********* Test properties above
 
 .slanted-bottom {
-  -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 50% 90%, 0 100%);
-  clip-path: polygon(0 0, 100% 0, 100% 100%, 50% 90%, 0 100%);
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 50% 95%, 0 100%);
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 50% 95%, 0 100%);
 }
 
 .slanted-bottom-top {
-  -webkit-clip-path: polygon(
-    0 10%,
-    50% 0,
-    100% 10%,
-    100% 100%,
-    50% 90%,
-    0 100%
-  );
-  clip-path: polygon(0 10%, 50% 0, 100% 10%, 100% 100%, 50% 90%, 0 100%);
+  -webkit-clip-path: polygon(0 5%, 50% 0, 100% 5%, 100% 100%, 50% 95%, 0 100%);
+  clip-path: polygon(0 5%, 50% 0, 100% 5%, 100% 100%, 50% 95%, 0 100%);
 }
 
 .slanted-top {
-  -webkit-clip-path: polygon(0 10%, 50% 0, 100% 10%, 100% 100%, 0 100%);
-  clip-path: polygon(0 10%, 50% 0, 100% 10%, 100% 100%, 0 100%);
+  -webkit-clip-path: polygon(0 5%, 50% 0, 100% 5%, 100% 100%, 0 100%);
+  clip-path: polygon(0 5%, 50% 0, 100% 5%, 100% 100%, 0 100%);
 }
 
 .bg-gray {
@@ -149,13 +145,14 @@ h6 {
   color: var(--color-white);
   min-height: 90vh;
 
-  h1 {
+  &-heading {
+    font-size: 3rem;
     color: var(--color-white);
     line-height: 1.7;
   }
 
   &-text-container {
-    padding: 3.5rem;
+    padding: 3rem 3.5rem;
   }
 
   &-btn {
@@ -165,12 +162,15 @@ h6 {
     font-weight: bold;
     border-radius: 0;
     background-color: var(--color-medium-green);
+    margin-bottom: 3rem;
 
     transition: all 0.3s ease-in-out;
   }
+
   &-btn-arrow {
     display: none;
   }
+
   &-btn:hover {
     background-color: var(--color-medium-green);
     .header-btn-arrow {
@@ -213,15 +213,6 @@ h6 {
 }
 
 // Decouvrez Home page
-@keyframes loading {
-  0% {
-    width: 0;
-  }
-  100% {
-    width: 100%;
-  }
-}
-
 .découvrez {
   &-card-img {
     position: relative;
@@ -243,6 +234,7 @@ h6 {
     transform: translateY(100%);
     transition: transform 0.5s ease-in-out;
   }
+
   &-card-img:hover &-hover-card {
     transform: translateY(0%);
   }
@@ -299,6 +291,33 @@ h6 {
   }
 }
 
+// Images Continuous scroll
+@keyframes slide {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+.images-scroll {
+  &-header {
+    text-align: center;
+  }
+  &-text {
+    margin: 3rem auto;
+  }
+  &-container {
+    overflow: hidden;
+  }
+  &-band {
+    display: flex;
+
+    animation: 15s slide infinite linear;
+    transition: all 0.3sec ease-in-out;
+  }
+}
 // Carousel Home Page Styles
 .carousel {
   height: 100%;
@@ -405,6 +424,7 @@ h6 {
     z-index: -5;
   }
   &-heading {
+    font-size: 3rem;
     margin: 7rem auto;
     text-align: center;
     // width: 50%;
@@ -496,34 +516,5 @@ h6 {
   .actualité-card {
     margin-top: 5rem;
     background-color: var(--color-white);
-  }
-}
-
-// Continuous scroll
-@keyframes slide {
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(-100%);
-  }
-}
-
-.images-scroll {
-  &-header {
-    text-align: center;
-  }
-  &-text {
-    width: 50%;
-    margin: 3rem auto;
-  }
-  &-container {
-    overflow: hidden;
-  }
-  &-band {
-    display: flex;
-
-    animation: 15s slide infinite linear;
-    transition: all 0.3sec ease-in-out;
   }
 }

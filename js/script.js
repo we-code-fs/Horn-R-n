@@ -84,13 +84,13 @@ class UnitedFooter extends HTMLElement {
     <div class="footer slanted-top container-fluid px-0 overflow-hidden">
         <div class="container-fluid p-0">
           <div class="row">
-            <div class="col-md-4 text-sm-center">
+            <div class="col-md-4 text-center text-lg-start">
               <a href="index.html"
-                ><img src="./images/footer-logo.svg" alt="Horn Rénovation Logo" class="footer-logo "
+                ><img src="./images/footer-logo.svg" alt="Horn Rénovation Logo" class="footer-logo mb-4"
               /></a>
             </div>
             <div class="col-md-4">
-              <ul class="footer-contact-list">
+              <ul class="footer-contact-list mb-4">
                 <li class="fw-bold text-uppercase footer-contact-list-item">Horn Rénovation</li>
                 <li class="footer-contact-list-item"><a href="https://maps.app.goo.gl/HoqzpefTNBsZACoo7" class="footer-nav-link">
                   15 Rue Combe Jean Robert, <br/>21400 Châtillon-sur-Seine</a></li>
@@ -118,29 +118,8 @@ class UnitedFooter extends HTMLElement {
     `;
   }
 }
-// *****************
-// Active Nav Page
-// *****************
-
-// !Review Code
-document.addEventListener("DOMContentLoaded", function () {
-  const links = document.querySelectorAll(".navbar-nav .nav-link");
-  const currentLocation = location.pathname;
-
-  links.forEach(function (link) {
-    const linkHref = link
-      .getAttribute("href")
-      .normalize("NFD")
-      .replace(/[\u0300-\u036f]/g, "");
-    const currentLocationNormalized = currentLocation
-      .normalize("NFD")
-      .replace(/[\u0300-\u036f]/g, "");
-
-    if (linkHref === currentLocationNormalized) {
-      link.classList.add("nav-item-selected");
-    }
-  });
-});
+customElements.define(`united-nav`, UnitedNav);
+customElements.define(`united-footer`, UnitedFooter);
 
 // ****************
 // Carousel code
@@ -179,5 +158,26 @@ carouselArrows.forEach((arrow) => {
 // Carousel Bars controls
 
 // *************
-customElements.define(`united-nav`, UnitedNav);
-customElements.define(`united-footer`, UnitedFooter);
+
+// *****************
+// Active Nav Page
+// *****************
+
+document.addEventListener("DOMContentLoaded", function () {
+  const currentPage = window.location.pathname
+    .split("/")
+    .pop()
+    .replace(".html", "");
+  const navLinks = document.querySelectorAll(".nav-link");
+
+  navLinks.forEach(function (link) {
+    const href = link
+      .getAttribute("href")
+      .split("/")
+      .pop()
+      .replace(".html", "");
+    if (href === currentPage) {
+      link.classList.add("nav-item-selected");
+    }
+  });
+});
